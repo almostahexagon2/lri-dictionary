@@ -67,6 +67,18 @@
 
 <svelte:head>
 	<title>Interactive Kokanu Dictionary</title>
+
+	<meta
+		name="description"
+		content="Interactive dictionary for the IAL Kokanu."
+	/>
+	<meta name="keywords" content="kokanu, dictionary, interactive" />
+
+	<meta property="og:title" content="Interactive Kokanu Dictionary" />
+	<meta
+		property="og:description"
+		content="Interactive dictionary for the IAL Kokanu."
+	/>
 </svelte:head>
 
 <div class="flex justify-between">

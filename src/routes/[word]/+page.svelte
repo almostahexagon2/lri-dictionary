@@ -4,6 +4,16 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>{data.word} &middot; {data.word.likanu} | Kokanu</title>
+
+	<meta name="description" content={data.word.meaning} />
+	<meta name="keywords" content={data.word.word} />
+
+	<meta property="og:title" content={data.word.word} />
+	<meta property="og:description" content={data.word.meaning} />
+</svelte:head>
+
 <div class="flex justify-between">
 	<h1 class="text-3xl font-bold">
 		{data.word.word} &middot; {data.word.likanu}
