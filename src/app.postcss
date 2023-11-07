@@ -3,8 +3,46 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+	body {
+		@apply bg-gray-50 text-gray-800
+			dark:bg-black dark:text-gray-100;
+	}
+}
+
 @layer components {
 	.wrapper {
 		@apply mx-auto max-w-screen-lg px-8;
+	}
+
+	.box {
+		@apply rounded-xl bg-white border-2 border-gray-200
+			dark:bg-gray-900 dark:border-gray-700;
+	}
+
+	.input {
+		@apply box focus:border-gray-400
+			dark:focus:border-gray-600
+			transition outline-none;
+	}
+
+	.interactive {
+		@apply box cursor-pointer hocus-visible:border-gray-400
+			dark:hocus-visible:border-gray-600
+			transition outline-none;
+	}
+}
+
+@layer utilities {
+	.no-transition {
+		transition: none !important;
+	}
+
+	.no-transition * {
+		transition: none !important;
+	}
+
+	.faded {
+		@apply text-gray-500 dark:text-gray-400;
 	}
 }
