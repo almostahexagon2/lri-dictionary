@@ -14,11 +14,11 @@
 	<meta
 		property="og:description"
 		content={data.word.meaning +
-			'\n\nNoun ·' +
+			'\n\nNoun · ' +
 			data.word.noun +
-			'\nVerb ·' +
+			'\nVerb · ' +
 			data.word.verb +
-			'\nModifier ·' +
+			'\nModifier · ' +
 			data.word.modifier +
 			'\n\nfrom ' +
 			data.word.origin +
