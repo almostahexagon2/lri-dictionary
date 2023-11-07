@@ -11,7 +11,23 @@
 	<meta name="keywords" content={data.word.word} />
 
 	<meta property="og:title" content={data.word.word} />
-	<meta property="og:description" content={data.word.meaning} />
+	<meta
+		property="og:description"
+		content={data.word.meaning +
+			'\n\nNoun ·' +
+			data.word.noun +
+			'\nVerb ·' +
+			data.word.verb +
+			'\nModifier ·' +
+			data.word.modifier +
+			'\n\nfrom ' +
+			data.word.origin +
+			' ' +
+			data.word.ipa +
+			'\n' +
+			data.word.family +
+			' family'}
+	/>
 </svelte:head>
 
 <div class="flex justify-between">
