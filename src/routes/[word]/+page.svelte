@@ -2,6 +2,27 @@
 	import { darkMode } from '$lib/stores.js';
 
 	export let data;
+
+	$: description = `${data.word.meaning}${
+		data.word.noun && data.word.noun !== '-'
+			? '\n\nNoun · ' +
+			  data.word.noun +
+			  '\nVerb · ' +
+			  data.word.verb +
+			  '\nModifier · ' +
+			  data.word.modifier
+			: ''
+	}${
+		data.word.origin && data.word.origin !== '-'
+			? '\n\nfrom ' +
+			  data.word.origin +
+			  ' ' +
+			  data.word.ipa +
+			  '\n' +
+			  data.word.family +
+			  ' family'
+			: ''
+	}`;
 </script>
 
 <svelte:head>
@@ -11,23 +32,7 @@
 	<meta name="keywords" content={data.word.word} />
 
 	<meta property="og:title" content={data.word.word} />
-	<meta
-		property="og:description"
-		content={data.word.meaning +
-			'\n\nNoun · ' +
-			data.word.noun +
-			'\nVerb · ' +
-			data.word.verb +
-			'\nModifier · ' +
-			data.word.modifier +
-			'\n\nfrom ' +
-			data.word.origin +
-			' ' +
-			data.word.ipa +
-			'\n' +
-			data.word.family +
-			' family'}
-	/>
+	<meta property="og:description" content={description} />
 </svelte:head>
 
 <div class="flex justify-between">
