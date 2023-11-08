@@ -42,6 +42,12 @@
 	</script>
 </svelte:head>
 
-<div class="wrapper my-32">
+<div class="h-24 bg-kokanu dark:bg-kokanu-dark flex">
+	<div class="w-full wrapper flex items-end">
+		<img src="/banner.png" alt="" width="204" height="80" />
+	</div>
+</div>
+
+<div class="wrapper mt-12 mb-32">
 	<slot />
 </div>

@@ -10,6 +10,10 @@ const config = {
 		extend: {
 			fontFamily: {
 				sans: ['Inter', ...defaultTheme.fontFamily.sans]
+			},
+			colors: {
+				kokanu: '#1d328f',
+				'kokanu-dark': '#0d1742'
 			}
 		}
 	},

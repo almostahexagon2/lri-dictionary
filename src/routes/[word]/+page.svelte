@@ -35,7 +35,7 @@
 	<meta property="og:description" content={description} />
 </svelte:head>
 
-<div class="flex justify-between">
+<div class="flex justify-between items-center">
 	<h1 class="text-3xl font-bold">
 		{data.word.word} &middot; {data.word.likanu}
 	</h1>
