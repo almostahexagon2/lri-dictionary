@@ -71,7 +71,7 @@
 </script>
 
 <svelte:head>
-	<title>Interactive Kokanu Dictionary</title>
+	<title>pata je iwe ikama</title>
 
 	<meta
 		name="description"
@@ -79,7 +79,7 @@
 	/>
 	<meta name="keywords" content="kokanu, dictionary, interactive" />
 
-	<meta property="og:title" content="Interactive Kokanu Dictionary" />
+	<meta property="og:title" content="pata je iwe ikama" />
 	<meta
 		property="og:description"
 		content="Interactive dictionary for the IAL Kokanu."
@@ -87,7 +87,7 @@
 </svelte:head>
 
 <div class="flex justify-between items-center">
-	<h1 class="text-3xl font-bold">Kokanu Dictionary</h1>
+	<h1 class="text-3xl font-bold">pata je iwe ikama</h1>
 
 	<button
 		class="interactive p-2"
@@ -129,7 +129,7 @@
 	</button>
 </div>
 
-<p class="mt-4">This is an interactive dictionary for the IAL Kokanu.</p>
+<p class="mt-4">Interactive dictionary for the IAL Kokanu.</p>
 
 <p class="mt-4">
 	<select class="interactive px-2 py-1" bind:value={$view}>
@@ -177,7 +177,7 @@
 {#if $view === 'normal'}
 	<div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
 		{#each filteredWords as word (word.word)}
-			<div class="box relative overflow-hidden p-4">
+			<div class="box relative overflow-hidden p-5">
 				<div
 					class="w-6 h-6 absolute -top-3 -left-3 rounded-full
 						{wordTypeBackgroundColors[word.type]}"
