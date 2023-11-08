@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { selectedWord } from './stores';
+
 	export let items: Map<string, string[]>;
 
 	$: sorted = [...items.entries()].sort((a, b) => a[0].localeCompare(b[0]));
@@ -19,12 +21,18 @@
 				class="pl-2 py-1 border-l-2 dark:border-gray-800 align-text-top flex flex-wrap gap-x-2"
 			>
 				{#each words as word}
-					<a
+					<button
 						class="text-blue-500 hocus-visible:text-blue-600 transition"
-						href="/{word}"
+						on:click={() => {
+							if ($selectedWord === word) {
+								$selectedWord = '';
+							} else {
+								$selectedWord = word;
+							}
+						}}
 					>
 						{word}
-					</a>
+					</button>
 				{/each}
 			</td>
 		</tr>

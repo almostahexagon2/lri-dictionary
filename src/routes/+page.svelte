@@ -9,6 +9,8 @@
 		wordTypeBackgroundColors
 	} from '$lib/types';
 
+	import WordDetails from '$lib/components/WordDetails.svelte';
+
 	export let data;
 
 	const view = savedWritable<'normal' | 'compact'>('wordView', 'normal');
@@ -209,36 +211,8 @@
 					<span class="font-bold">{word.word}</span>
 					<span class="ml-1 faded">{word.likanu}</span>
 				</a>
-				<p class="faded">{word.type.toLowerCase()}</p>
-				<p class="mt-2">{word.meaning}</p>
 
-				{#if word.noun !== '-'}
-					<p class="mt-2">
-						<b>Noun</b> &middot;
-						{word.noun}
-					</p>
-					<p>
-						<b>Verb</b> &middot;
-						{word.verb}
-					</p>
-					<p>
-						<b>Modifier</b> &middot;
-						{word.modifier}
-					</p>
-				{/if}
-
-				{#if word.origin && word.origin !== '-'}
-					<p class="mt-2">
-						<span class="faded"> from </span>
-						{word.origin}
-						{#if word.ipa}
-							{word.ipa}
-						{/if}
-					</p>
-					<p>
-						{word.family} family
-					</p>
-				{/if}
+				<WordDetails {word} />
 			</div>
 		{/each}
 	</div>

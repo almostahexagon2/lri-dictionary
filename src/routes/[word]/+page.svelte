@@ -1,4 +1,5 @@
 <script lang="ts">
+	import WordDetails from '$lib/components/WordDetails.svelte';
 	import { darkMode } from '$lib/stores.js';
 
 	export let data;
@@ -99,38 +100,4 @@
 	</div>
 </div>
 
-<p class="mt-4 faded">
-	{data.word.type}
-</p>
-
-<p class="mt-4">
-	{data.word.meaning}
-</p>
-
-{#if data.word.noun !== '-'}
-	<p class="mt-4">
-		<b>Noun</b> &middot;
-		{data.word.noun}
-	</p>
-	<p>
-		<b>Verb</b> &middot;
-		{data.word.verb}
-	</p>
-	<p>
-		<b>Modifier</b> &middot;
-		{data.word.modifier}
-	</p>
-{/if}
-
-{#if data.word.origin && data.word.origin !== '-'}
-	<p class="mt-4">
-		<span class="faded"> from </span>
-		{data.word.origin}
-		{#if data.word.ipa}
-			{data.word.ipa}
-		{/if}
-	</p>
-	<p>
-		{data.word.family} family
-	</p>
-{/if}
+<WordDetails word={data.word} compact={false} />

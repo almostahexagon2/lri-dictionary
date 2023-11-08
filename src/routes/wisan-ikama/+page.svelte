@@ -1,12 +1,32 @@
 <script lang="ts">
 	import { darkMode } from '$lib/stores';
+	import type { Word } from '$lib/types';
+
+	import { selectedWord } from './stores';
 
 	import Families from './Families.svelte';
 	import WordTypes from './WordTypes.svelte';
 	import Syllables from './Syllables.svelte';
 	import StartingLetters from './StartingLetters.svelte';
+	import Popup from '$lib/components/Popup.svelte';
+	import WordDetails from '$lib/components/WordDetails.svelte';
 
 	export let data;
+
+	let selectedWordData: Word | null = null;
+
+	$: if ($selectedWord || !$selectedWord) {
+		selectedWordData =
+			data.words.find(word => word.word === $selectedWord) ?? null;
+
+		if (!selectedWordData) {
+			$selectedWord = '';
+		}
+	}
+
+	$: if (!selectedWordData) {
+		$selectedWord = '';
+	}
 </script>
 
 <svelte:head>
@@ -91,3 +111,35 @@
 <StartingLetters words={data.words} />
 <WordTypes words={data.words} />
 <Families words={data.words} />
+
+<Popup bind:value={selectedWordData} let:value={word}>
+	<div class="flex justify-between">
+		<a
+			class="text-2xl hocus-visible:text-blue-500 transition"
+			href="/{word.word}"
+		>
+			<span class="font-bold">{word.word}</span>
+			<span class="ml-1 faded">{word.likanu}</span>
+		</a>
+
+		<button
+			class="interactive p-1"
+			on:click={() => {
+				selectedWord.set('');
+			}}
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				class="w-5 h-5"
+			>
+				<path
+					d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
+				/>
+			</svg>
+		</button>
+	</div>
+
+	<WordDetails {word} />
+</Popup>
