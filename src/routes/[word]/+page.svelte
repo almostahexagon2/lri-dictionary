@@ -4,41 +4,43 @@
 
 	export let data;
 
-	$: description = `${data.word.meaning}${
-		data.word.noun && data.word.noun !== '-'
+	$: word = data.word;
+
+	$: description = `${word.meaning}${
+		word.noun && word.noun !== '-'
 			? '\n\nNoun · ' +
-			  data.word.noun +
+			  word.noun +
 			  '\nVerb · ' +
-			  data.word.verb +
+			  word.verb +
 			  '\nModifier · ' +
-			  data.word.modifier
+			  word.modifier
 			: ''
 	}${
-		data.word.origin && data.word.origin !== '-'
+		word.origin && word.origin !== '-'
 			? '\n\nfrom ' +
-			  data.word.origin +
+			  word.origin +
 			  ' ' +
-			  data.word.ipa +
+			  word.ipa +
 			  '\n' +
-			  data.word.family +
+			  word.family +
 			  ' family'
 			: ''
 	}`;
 </script>
 
 <svelte:head>
-	<title>{data.word} &middot; {data.word.likanu} | Kokanu</title>
+	<title>{word.word} &middot; {word.likanu} | Kokanu</title>
 
 	<meta name="description" content={description} />
-	<meta name="keywords" content={data.word.word} />
+	<meta name="keywords" content={word.word} />
 
-	<meta property="og:title" content="{data.word} · {data.word.likanu}" />
+	<meta property="og:title" content="{word.word} · {word.likanu}" />
 	<meta property="og:description" content={description} />
 </svelte:head>
 
 <div class="flex justify-between items-end">
 	<h1 class="text-3xl font-bold">
-		{data.word.word} &middot; {data.word.likanu}
+		{word.word} &middot; {word.likanu}
 	</h1>
 
 	<div class="flex gap-2">
@@ -100,4 +102,4 @@
 	</div>
 </div>
 
-<WordDetails word={data.word} compact={false} />
+<WordDetails {word} compact={false} />

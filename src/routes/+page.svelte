@@ -73,7 +73,7 @@
 </script>
 
 <svelte:head>
-	<title>pata je iwe ikama</title>
+	<title>pata je iwe ikama | Kokanu</title>
 
 	<meta
 		name="description"
