@@ -1,44 +1,32 @@
 <script lang="ts">
-	import { darkMode } from '$lib/stores.js';
+	import { darkMode } from '$lib/stores';
+
+	import Families from './Families.svelte';
+	import WordTypes from './WordTypes.svelte';
+	import Syllables from './Syllables.svelte';
+	import StartingLetters from './StartingLetters.svelte';
 
 	export let data;
-
-	$: description = `${data.word.meaning}${
-		data.word.noun && data.word.noun !== '-'
-			? '\n\nNoun · ' +
-			  data.word.noun +
-			  '\nVerb · ' +
-			  data.word.verb +
-			  '\nModifier · ' +
-			  data.word.modifier
-			: ''
-	}${
-		data.word.origin && data.word.origin !== '-'
-			? '\n\nfrom ' +
-			  data.word.origin +
-			  ' ' +
-			  data.word.ipa +
-			  '\n' +
-			  data.word.family +
-			  ' family'
-			: ''
-	}`;
 </script>
 
 <svelte:head>
-	<title>{data.word} &middot; {data.word.likanu} | Kokanu</title>
+	<title>wisan ikama | Kokanu</title>
 
-	<meta name="description" content={description} />
-	<meta name="keywords" content={data.word.word} />
+	<meta
+		name="description"
+		content="Interactive dictionary for the IAL Kokanu."
+	/>
+	<meta name="keywords" content="kokanu, dictionary, interactive" />
 
-	<meta property="og:title" content="{data.word} · {data.word.likanu}" />
-	<meta property="og:description" content={description} />
+	<meta property="og:title" content="wisan ikama | Kokanu" />
+	<meta
+		property="og:description"
+		content="Interactive dictionary for the IAL Kokanu."
+	/>
 </svelte:head>
 
 <div class="flex justify-between items-end">
-	<h1 class="text-3xl font-bold">
-		{data.word.word} &middot; {data.word.likanu}
-	</h1>
+	<h1 class="text-3xl font-bold">wisan ikama</h1>
 
 	<div class="flex gap-2">
 		<a href="/" class="interactive p-2">
@@ -99,38 +87,7 @@
 	</div>
 </div>
 
-<p class="mt-4 faded">
-	{data.word.type}
-</p>
-
-<p class="mt-4">
-	{data.word.meaning}
-</p>
-
-{#if data.word.noun !== '-'}
-	<p class="mt-4">
-		<b>Noun</b> &middot;
-		{data.word.noun}
-	</p>
-	<p>
-		<b>Verb</b> &middot;
-		{data.word.verb}
-	</p>
-	<p>
-		<b>Modifier</b> &middot;
-		{data.word.modifier}
-	</p>
-{/if}
-
-{#if data.word.origin && data.word.origin !== '-'}
-	<p class="mt-4">
-		<span class="faded"> from </span>
-		{data.word.origin}
-		{#if data.word.ipa}
-			{data.word.ipa}
-		{/if}
-	</p>
-	<p>
-		{data.word.family} family
-	</p>
-{/if}
+<Syllables words={data.words} />
+<StartingLetters words={data.words} />
+<WordTypes words={data.words} />
+<Families words={data.words} />
