@@ -33,8 +33,6 @@
 			);
 		}
 
-		console.log(localStorage.getItem('kokanu:darkMode'));
-
 		document.documentElement.classList.toggle(
 			'dark',
 			localStorage.getItem('kokanu:darkMode') === 'true'
