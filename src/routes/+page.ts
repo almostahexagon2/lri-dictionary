@@ -1,4 +1,4 @@
-import type { Word } from '$lib/types';
+import type { Word, WordType } from '$lib/types';
 
 export async function load({ fetch }) {
 	const words: Word[] = await fetch('/data').then(r => r.json());
@@ -11,6 +11,6 @@ export async function load({ fetch }) {
 
 	return {
 		words,
-		types: [...types].sort()
+		types: [...types].sort() as WordType[]
 	};
 }

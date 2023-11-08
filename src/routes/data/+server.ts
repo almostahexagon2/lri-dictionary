@@ -28,7 +28,7 @@ export async function GET({ fetch, setHeaders }) {
 	const words = data.map(word => {
 		const w = {} as Word;
 		for (const key of Object.keys(keys)) {
-			w[keys[key]] = word[key];
+			w[keys[key] as 'word'] = word[key];
 		}
 		return w;
 	});

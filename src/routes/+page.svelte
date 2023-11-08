@@ -2,7 +2,12 @@
 	import { distance } from 'fastest-levenshtein';
 
 	import { darkMode, savedWritable } from '$lib/stores';
-	import type { Word } from '$lib/types.js';
+	import {
+		wordTypeBorderColors,
+		type Word,
+		wordTypeTextColors,
+		wordTypeBackgroundColors
+	} from '$lib/types';
 
 	export let data;
 
@@ -138,7 +143,11 @@
 		{@const active = shownTypes.includes(type)}
 
 		<label
-			class="interactive px-2 py-1 font-semibold {!active ? 'faded' : ''}"
+			class="box px-2 py-1 cursor-pointer transition
+				{active
+				? 'hocus-visible:bg-gray-100 dark:hocus-visible:bg-gray-800'
+				: 'faded border-opacity-25 dark:border-opacity-25'}
+				{wordTypeBorderColors[type]}"
 		>
 			<input
 				type="checkbox"
@@ -167,8 +176,13 @@
 
 {#if $view === 'normal'}
 	<div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-		{#each filteredWords as word}
-			<div class="box p-4">
+		{#each filteredWords as word (word.word)}
+			<div class="box relative overflow-hidden p-4">
+				<div
+					class="w-6 h-6 absolute -top-3 -left-3 rounded-full
+						{wordTypeBackgroundColors[word.type]}"
+				/>
+
 				<a
 					href="/{word.word}"
 					class="text-xl hocus-visible:text-blue-500 transition"
@@ -210,7 +224,7 @@
 	</div>
 {:else}
 	<div class="mt-4 grid">
-		{#each filteredWords as word}
+		{#each filteredWords as word (word.word)}
 			<p>
 				<a
 					href="/{word.word}"
@@ -220,7 +234,9 @@
 					&middot;
 					<span class="font-bold">{word.likanu}</span>
 				</a>
-				<span class="faded text-xs">{word.type.toLowerCase()}</span>
+				<span class="text-xs {wordTypeTextColors[word.type]}">
+					{word.type.toLowerCase()}
+				</span>
 				<span>{word.meaning}</span>
 			</p>
 		{/each}
