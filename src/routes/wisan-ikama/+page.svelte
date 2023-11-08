@@ -4,12 +4,14 @@
 
 	import { selectedWord } from './stores';
 
-	import Families from './Families.svelte';
-	import WordTypes from './WordTypes.svelte';
-	import Syllables from './Syllables.svelte';
-	import StartingLetters from './StartingLetters.svelte';
-	import Popup from '$lib/components/Popup.svelte';
 	import WordDetails from '$lib/components/WordDetails.svelte';
+
+	import Families from './Families.svelte';
+	import SimilarWords from './SimilarWords.svelte';
+	import StartingLetters from './StartingLetters.svelte';
+	import Syllables from './Syllables.svelte';
+	import Popup from '$lib/components/Popup.svelte';
+	import WordTypes from './WordTypes.svelte';
 
 	export let data;
 
@@ -111,6 +113,7 @@
 <StartingLetters words={data.words} />
 <WordTypes words={data.words} />
 <Families words={data.words} />
+<SimilarWords words={data.words} />
 
 <Popup bind:value={selectedWordData} let:value={word}>
 	<div class="flex justify-between">
