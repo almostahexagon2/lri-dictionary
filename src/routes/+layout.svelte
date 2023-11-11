@@ -41,8 +41,16 @@
 </svelte:head>
 
 <div class="h-24 bg-kokanu dark:bg-kokanu-dark flex">
-	<div class="w-full wrapper flex items-end">
-		<img src="/banner.png" alt="" width="204" height="80" />
+	<div class="w-full wrapper flex">
+		<a href="/" class="flex">
+			<img
+				src="/banner.png"
+				alt=""
+				width="204"
+				height="80"
+				class="mt-auto"
+			/>
+		</a>
 	</div>
 </div>
 
