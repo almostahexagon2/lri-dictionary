@@ -1,5 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { Word } from '$lib/types';
+import { sortAlphabetically } from '$lib/util.js';
 import parser from 'papaparse';
 
 const SHEET_URL =
@@ -25,13 +26,15 @@ export async function GET({ fetch, setHeaders }) {
 		data: Record<string, string>[];
 	};
 
-	const words = data.map(word => {
-		const w = {} as Word;
-		for (const key of Object.keys(keys)) {
-			w[keys[key] as 'word'] = word[key];
-		}
-		return w;
-	});
+	const words = data
+		.map(word => {
+			const w = {} as Word;
+			for (const key of Object.keys(keys)) {
+				w[keys[key] as 'word'] = word[key];
+			}
+			return w;
+		})
+		.sort(sortAlphabetically);
 
 	setHeaders({
 		'Cache-Control': 's-maxage=3600'

@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { sortAlphabetically } from '$lib/util';
 	import { selectedWord } from './stores';
 
 	export let items: Map<string, string[]>;
 
-	$: sorted = [...items.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+	$: sorted = [...items.entries()].sort((a, b) =>
+		sortAlphabetically(a[0], b[0])
+	);
 </script>
 
 <table class="w-full">

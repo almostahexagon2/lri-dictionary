@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Word } from '$lib/types';
+	import { sortAlphabetically } from '$lib/util';
 	import Separator from './Separator.svelte';
 	import SyllableSpace from './SyllableSpace.svelte';
 
@@ -47,9 +48,9 @@
 		's',
 		't',
 		'w'
-	];
+	].sort(sortAlphabetically);
 	const otherConsonants = consonants.slice(1);
-	const vowels = ['a', 'e', 'i', 'o', 'u'];
+	const vowels = ['a', 'e', 'i', 'o', 'u'].sort(sortAlphabetically);
 
 	function consonantCount(consonant: string) {
 		if (consonant === '') {
