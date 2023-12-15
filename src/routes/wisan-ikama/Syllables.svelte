@@ -5,12 +5,18 @@
 
 	export let words: Word[];
 
+	let useStartingSyllables = false;
+
 	const syllable = /[chjklmnpstw]?(?=[aeiou])[aeiou]n?(?![aeiou])/g;
 
 	$: syllableGroups = words.reduce((acc, word) => {
-		const syllables = word.word.match(syllable);
+		let syllables = word.word.match(syllable);
 
 		if (syllables) {
+			if (useStartingSyllables) {
+				syllables = [syllables[0]];
+			}
+
 			for (const syllable of syllables) {
 				if (acc.has(syllable)) {
 					acc.set(syllable, acc.get(syllable)! + 1);
@@ -78,7 +84,19 @@
 
 <Separator>Syllables</Separator>
 
-<div class="w-full overflow-x-auto">
+<div class="flex justify-center">
+	<button
+		class="box px-2 py-1 cursor-pointer transition border-blue-400 dark:border-blue-600
+			{useStartingSyllables
+			? 'hocus-visible:bg-gray-100 dark:hocus-visible:bg-gray-800'
+			: 'faded border-opacity-25 dark:border-opacity-25'}"
+		on:click={() => (useStartingSyllables = !useStartingSyllables)}
+	>
+		Starting Syllables Only
+	</button>
+</div>
+
+<div class="mt-4 w-full overflow-x-auto">
 	<div class="grid w-max mx-auto gap-2">
 		<div />
 
