@@ -3,14 +3,8 @@
 	import VirtualScroll from 'svelte-virtual-scroll-list';
 
 	import { darkMode, savedWritable } from '$lib/stores';
-	import {
-		wordTypeBorderColors,
-		type Word,
-		wordTypeBackgroundColors,
-		wordTypeTextColors
-	} from '$lib/types';
+	import { wordTypeBorderColors, type Word } from '$lib/types';
 
-	import WordDetails from '$lib/components/WordDetails.svelte';
 	import WordLine from '$lib/components/WordLine.svelte';
 	import WordBox from '$lib/components/WordBox.svelte';
 
@@ -229,12 +223,6 @@
 			{/each}
 		</div>
 	</VirtualScroll>
-
-	<!-- <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-		{#each filteredWords as word (word.word)}
-			
-		{/each}
-	</div> -->
 {:else}
 	<div class="mt-4">
 		<VirtualScroll
