@@ -1,21 +1,24 @@
 <script lang="ts">
 	import { distance } from 'fastest-levenshtein';
+	import VirtualScroll from 'svelte-virtual-scroll-list';
 
 	import { darkMode, savedWritable } from '$lib/stores';
 	import {
 		wordTypeBorderColors,
 		type Word,
-		wordTypeTextColors,
-		wordTypeBackgroundColors
+		wordTypeBackgroundColors,
+		wordTypeTextColors
 	} from '$lib/types';
 
 	import WordDetails from '$lib/components/WordDetails.svelte';
+	import WordLine from '$lib/components/WordLine.svelte';
+	import WordBox from '$lib/components/WordBox.svelte';
 
 	export let data;
 
 	const view = savedWritable<'normal' | 'compact'>('wordView', 'normal');
 
-	let shownTypes = data.types.slice();
+	let shownTypes: string[] = [];
 
 	const normalize = (str: string) =>
 		str
@@ -27,7 +30,7 @@
 	let search = '';
 	$: fixedSearch = normalize(search);
 
-	$: scoreMatch = (str: string) => {
+	function scoreMatch(str: string) {
 		if (!str) return 0;
 
 		const normalized = normalize(str);
@@ -44,9 +47,9 @@
 		if (distanceScore > 0.5) return 0;
 
 		return 1 - distanceScore;
-	};
+	}
 
-	$: scoreWord = (word: Word) => {
+	function scoreWord(word: Word) {
 		return (
 			scoreMatch(word.word) * 100 +
 			scoreMatch(word.meaning) * 50 +
@@ -57,11 +60,11 @@
 			scoreMatch(word.origin) * 20 +
 			scoreMatch(word.family) * 20
 		);
-	};
+	}
 
-	$: genericFilteredWords = data.words.filter((word: Word) =>
-		shownTypes.includes(word.type)
-	);
+	$: genericFilteredWords = !shownTypes.length
+		? data.words
+		: data.words.filter((word: Word) => shownTypes.includes(word.type));
 
 	$: filteredWords = !fixedSearch
 		? genericFilteredWords
@@ -70,6 +73,21 @@
 				.filter(([_, score]) => score > 19)
 				.sort(([, a], [, b]) => b - a)
 				.map(([word]) => word);
+
+	function group6<T>(array: T[]): T[][] {
+		const result: T[][] = [];
+
+		for (let i = 0; i < array.length; i += 6) {
+			const group = array.slice(i, i + 6);
+
+			// @ts-expect-error Required for VirtualScroll
+			group.key = i;
+
+			result.push(group);
+		}
+
+		return result;
+	}
 </script>
 
 <svelte:head>
@@ -196,43 +214,37 @@
 </p>
 
 {#if $view === 'normal'}
-	<div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+	{@const groupedWords = group6(filteredWords)}
+
+	<VirtualScroll
+		data={groupedWords}
+		key="key"
+		let:data={group}
+		pageMode
+		keeps={10}
+	>
+		<div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+			{#each group as word (word.word)}
+				<WordBox {word} />
+			{/each}
+		</div>
+	</VirtualScroll>
+
+	<!-- <div class="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
 		{#each filteredWords as word (word.word)}
-			<div class="box relative overflow-hidden p-5">
-				<div
-					class="w-6 h-6 absolute -top-3 -left-3 rounded-full
-						{wordTypeBackgroundColors[word.type]}"
-				/>
-
-				<a
-					href="/{word.word}"
-					class="text-xl hocus-visible:text-blue-500 transition"
-				>
-					<span class="font-bold">{word.word}</span>
-					<span class="ml-1 faded">{word.likanu}</span>
-				</a>
-
-				<WordDetails {word} />
-			</div>
+			
 		{/each}
-	</div>
+	</div> -->
 {:else}
-	<div class="mt-4 grid">
-		{#each filteredWords as word (word.word)}
-			<p>
-				<a
-					href="/{word.word}"
-					class="hocus-visible:text-blue-500 transition"
-				>
-					<span class="font-bold">{word.word}</span>
-					&middot;
-					<span class="font-bold">{word.likanu}</span>
-				</a>
-				<span class="text-xs {wordTypeTextColors[word.type]}">
-					{word.type.toLowerCase()}
-				</span>
-				<span>{word.meaning}</span>
-			</p>
-		{/each}
+	<div class="mt-4">
+		<VirtualScroll
+			data={filteredWords}
+			key="word"
+			let:data={word}
+			pageMode
+			keeps={100}
+		>
+			<WordLine {word} />
+		</VirtualScroll>
 	</div>
 {/if}

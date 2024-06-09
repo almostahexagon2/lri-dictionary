@@ -24,6 +24,13 @@
 		</p>
 	{/if}
 
+	{#if word.antonym}
+		<p class="space">
+			<b>Antonym</b> &middot;
+			{word.antonym}
+		</p>
+	{/if}
+
 	{#if word.origin && word.origin !== '-'}
 		<p class="space">
 			<span class="faded"> from </span>

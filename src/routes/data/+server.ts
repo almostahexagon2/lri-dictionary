@@ -14,6 +14,7 @@ const keys: Record<string, keyof Word> = {
 	Noun: 'noun',
 	Verb: 'verb',
 	Modifier: 'modifier',
+	Antonym: 'antonym',
 	Origin: 'origin',
 	IPA: 'ipa',
 	Family: 'family'
