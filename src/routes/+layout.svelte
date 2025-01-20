@@ -40,9 +40,9 @@
 	</script>
 </svelte:head>
 
-<div class="h-24 bg-kokanu dark:bg-kokanu-dark flex">
-	<div class="w-full wrapper flex">
-		<a href="/" class="flex">
+<div class="bg-kokanu dark:bg-kokanu-dark flex">
+	<div class="w-full wrapper flex flex-wrap">
+		<a href="/" class="flex pt-4">
 			<img
 				src="/banner.png"
 				alt=""
@@ -51,9 +51,16 @@
 				class="mt-auto"
 			/>
 		</a>
+
+		<a
+			href="https://kokanu.com"
+			class="ml-auto mt-auto mb-4 text-sm flex text-white hocus:text-blue-200 transition"
+		>
+			kokanu.com
+		</a>
 	</div>
 </div>
 
-<div class="wrapper mt-12 mb-32">
+<div class="wrapper mt-8 mb-32">
 	<slot />
 </div>
