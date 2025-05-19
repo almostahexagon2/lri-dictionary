@@ -1,5 +1,6 @@
 export type WordType =
 	| 'Connector'
+	| 'Demonstrative'
 	| 'Grammar'
 	| 'Modifier'
 	| 'Noun'
@@ -26,6 +27,7 @@ export type Word = {
 
 export const wordTypeBackgroundColors: Record<WordType, string> = {
 	Connector: 'bg-rose-500 dark:bg-rose-600',
+	Demonstrative: 'bg-red-700 dark:bg-red-800',
 	Grammar: 'bg-orange-400 dark:bg-orange-600',
 	Modifier: 'bg-yellow-400 dark:bg-yellow-600',
 	Noun: 'bg-emerald-400 dark:bg-emerald-600',
@@ -37,6 +39,7 @@ export const wordTypeBackgroundColors: Record<WordType, string> = {
 
 export const wordTypeTextColors: Record<WordType, string> = {
 	Connector: 'text-rose-600 dark:text-rose-400',
+	Demonstrative: 'text-red-800 dark:text-red-600',
 	Grammar: 'text-orange-600 dark:text-orange-400',
 	Modifier: 'text-yellow-600 dark:text-yellow-400',
 	Noun: 'text-emerald-600 dark:text-emerald-400',
@@ -48,6 +51,7 @@ export const wordTypeTextColors: Record<WordType, string> = {
 
 export const wordTypeBorderColors: Record<WordType, string> = {
 	Connector: 'border-rose-500 dark:border-rose-600',
+	Demonstrative: 'border-red-700 dark:border-red-800',
 	Grammar: 'border-orange-400 dark:border-orange-600',
 	Modifier: 'border-yellow-400 dark:border-yellow-600',
 	Noun: 'border-emerald-400 dark:border-emerald-600',
