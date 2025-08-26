@@ -43,7 +43,6 @@ export async function GET({ fetch, setHeaders }) {
 	const firstRow = data.values.shift() as string[];
 
 	const words = data.values
-		.slice(1)
 		.map((row: string[]) => {
 			const w = {} as Word;
 			for (let i = 0; i < row.length; i++) {
