@@ -2,8 +2,9 @@ import { json } from '@sveltejs/kit';
 import { GOOGLE_KEY } from '$env/static/private';
 import type { Word } from '$lib/types';
 import { sortAlphabetically } from '$lib/util.js';
-import { sheets_v4 } from 'googleapis/build/src/apis/sheets/v4';
 
+const SHEETS_API_BASE = 'https://sheets.googleapis.com/v4/spreadsheets';
+const SHEET_NAME = 'Dictionary';
 const SHEET_ID = '1SiXXmQUrQ2KI7SRV3Hp_FP53HDteuuMF1ZJ_d_AwBr4';
 
 const keys: Record<string, keyof Word> = {
@@ -21,28 +22,34 @@ const keys: Record<string, keyof Word> = {
 };
 
 export async function GET({ fetch, setHeaders }) {
-	const sheets = new sheets_v4.Sheets({
-		auth: GOOGLE_KEY,
-		fetchImplementation: fetch
-	});
-	const res = await sheets.spreadsheets.values.get({
-		spreadsheetId: SHEET_ID,
-		range: 'Dictionary'
-	});
+	const url = `${SHEETS_API_BASE}/${SHEET_ID}/values/${SHEET_NAME}?key=${GOOGLE_KEY}`;
+	const response = await fetch(url);
 
-	if (!res.data.values) {
+	if (!response.ok) {
+		console.error(
+			'Google Sheets API error:',
+			response.status,
+			response.statusText
+		);
 		return json([]);
 	}
 
-	const firstRow = res.data.values.shift() as string[];
+	const data = await response.json();
 
-	const words = res.data.values
+	if (!data.values) {
+		return json([]);
+	}
+
+	const firstRow = data.values.shift() as string[];
+
+	const words = data.values
 		.slice(1)
-		.map(word => {
+		.map((row: string[]) => {
 			const w = {} as Word;
-			for (let i = 0; i < word.length; i++) {
+			for (let i = 0; i < row.length; i++) {
 				const key = keys[firstRow[i]];
-				w[key] = word[i];
+				// @ts-expect-error: WordType should always be correct
+				w[key] = row[i];
 			}
 			return w;
 		})

@@ -12,8 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
-		"fastest-levenshtein": "^1.0.16",
-		"googleapis": "^157.0.0"
+		"fastest-levenshtein": "^1.0.16"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
