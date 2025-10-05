@@ -13,7 +13,8 @@ const config = {
 			},
 			colors: {
 				kokanu: '#1d328f',
-				'kokanu-dark': '#0d1742'
+				'kokanu-dark': '#0d1742',
+				'zinc-925': 'oklch(0.1725 0.006 285.885)'
 			}
 		}
 	},

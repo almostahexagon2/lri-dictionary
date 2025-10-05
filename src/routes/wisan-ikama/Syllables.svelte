@@ -89,7 +89,7 @@
 	<button
 		class="box px-2 py-1 cursor-pointer transition border-blue-400 dark:border-blue-600
 			{useStartingSyllables
-			? 'hocus-visible:bg-gray-100 dark:hocus-visible:bg-gray-800'
+			? 'hocus-visible:bg-zinc-100 dark:hocus-visible:bg-zinc-800'
 			: 'faded border-opacity-25 dark:border-opacity-25'}"
 		on:click={() => (useStartingSyllables = !useStartingSyllables)}
 	>

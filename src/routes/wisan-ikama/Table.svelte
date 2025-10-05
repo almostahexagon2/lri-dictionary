@@ -11,7 +11,7 @@
 
 <table class="w-full">
 	{#each sorted as [title, words]}
-		<tr class="border-b-2 dark:border-gray-800 last:border-0">
+		<tr class="border-b-2 dark:border-zinc-800 last:border-0">
 			<th class="py-1 font-semibold text-left align-text-top">
 				{title}
 			</th>
@@ -21,7 +21,7 @@
 			</td>
 
 			<td
-				class="pl-2 py-1 border-l-2 dark:border-gray-800 align-text-top flex flex-wrap gap-x-2"
+				class="pl-2 py-1 border-l-2 dark:border-zinc-800 align-text-top flex flex-wrap gap-x-2"
 			>
 				{#each words as word}
 					<button

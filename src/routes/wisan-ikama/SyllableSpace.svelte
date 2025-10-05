@@ -6,7 +6,7 @@
 
 <p
 	class="px-2 py-1 flex gap-1 justify-between rounded-xl {!count
-		? 'bg-gray-100 faded dark:bg-gray-900'
+		? 'bg-zinc-100 faded dark:bg-zinc-900'
 		: 'background'}"
 	style:--proportion={count / maxCount}
 >
