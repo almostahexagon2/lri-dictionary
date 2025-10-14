@@ -28,7 +28,7 @@ jobs:
 
       - name: build
         env:
-           BASE_PATH: '/${{ almostahexagon2.github.io/lri-dictionary }}'
+           BASE_PATH: '/${{ https://almostahexagon2.github.io/lri-dictionary }}'
         run: |
            npm run build
 
@@ -48,7 +48,8 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ almostahexagon2.github.io/lri-dictionary }}
+      url: ${{ https://almostahexagon2.github.io/lri-dictionary }}
+    
 
     steps:
       - name: Deploy
