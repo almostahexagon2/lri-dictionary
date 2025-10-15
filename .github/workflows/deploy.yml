@@ -28,7 +28,7 @@ jobs:
 
       - name: build
         env:
-           BASE_PATH: '/lri-dictionary'
+           'BASE_PATH: /lri-dictionary'
         run: |
            npm run build
 
@@ -48,7 +48,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: '/lri-dictionary'
+      'url: /lri-dictionary'
       
 
     steps:
