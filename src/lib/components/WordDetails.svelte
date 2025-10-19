@@ -11,6 +11,13 @@
 		<p class="space">{word.meaning}</p>
 	{/if}
 
+	{#if word.noun !== '-'}
+		<p class="space">
+			<b>Noun.</b> &middot;
+			{word.noun}
+		</p>
+	{/if}
+
 	{#if word.adjective !== '-'}
 		<p class="space">
 			<b>Adj.</b> &middot;
@@ -48,8 +55,8 @@
 
 	{#if word.origin && word.origin !== '-'}
 		<p class="space">
-			<span class="faded"> from </span>
 			{word.origin}
+			<span class="faded"> from </span>
 		</p>
 		<p>
 			{word.language} 
