@@ -7,20 +7,35 @@
 
 <div class:compact>
 	<p class="faded">{word.type.toLowerCase()}</p>
-	<p class="space">{word.meaning}</p>
+	{#if word.meaning !== '-'}
+		<p class="space">{word.meaning}</p>
+	{/if}
 
-	{#if word.noun !== '-'}
+	{#if word.adjective !== '-'}
 		<p class="space">
-			<b>Noun</b> &middot;
-			{word.noun}
+			<b>Adj.</b> &middot;
+			{word.adjective}
 		</p>
-		<p>
+	{/if}
+
+	{#if word.verb !== '-'}
+		<p class="space">
 			<b>Verb</b> &middot;
 			{word.verb}
 		</p>
+	{/if}
+
+	{#if word.adverb !== '-'}
 		<p>
-			<b>Modifier</b> &middot;
-			{word.modifier}
+			<b>Adv.</b> &middot;
+			{word.adverb}
+		</p>
+	{/if}
+
+	{#if word.preposition !== '-'}
+		<p>
+			<b>Prep.</b> &middot;
+			{word.[preposition}
 		</p>
 	{/if}
 
@@ -35,12 +50,12 @@
 		<p class="space">
 			<span class="faded"> from </span>
 			{word.origin}
-			{#if word.ipa}
-				{word.ipa}
-			{/if}
+			<! {#if word.language}
+				{word.language}
+			{/if} >
 		</p>
 		<p>
-			{word.family} family
+			{word.language} 
 		</p>
 	{/if}
 </div>
