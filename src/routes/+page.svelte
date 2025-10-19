@@ -101,7 +101,7 @@
 </svelte:head>
 
 <div class="flex justify-between items-end">
-	<h1 class="text-2xl sm:text-3xl font-bold">pata je iwe ikama</h1>
+	<h1 class="text-2xl sm:text-3xl font-bold">Namuxo Lanrepunida</h1>
 
 	<div class="flex gap-2">
 		<a
@@ -183,7 +183,7 @@
 	</div>
 </div>
 
-<p class="mt-4">Interactive dictionary for the IAL Kokanu.</p>
+<p class="mt-4">Interactive dictionary for LRI.</p>
 
 <p class="mt-4">
 	<select class="interactive px-2 py-1" bind:value={$view}>
