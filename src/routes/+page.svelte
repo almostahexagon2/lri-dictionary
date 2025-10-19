@@ -85,18 +85,18 @@
 </script>
 
 <svelte:head>
-	<title>pata je iwe ikama | Kokanu</title>
+	<title>Namuxo Lanrepunida</title>
 
 	<meta
 		name="description"
-		content="Interactive dictionary for the IAL Kokanu."
+		content="Interactive dictionary for LRI."
 	/>
-	<meta name="keywords" content="kokanu, dictionary, interactive" />
+	<meta name="keywords" content="LRI, lanrepunido, dictionary, interactive" />
 
-	<meta property="og:title" content="pata je iwe ikama" />
+	<meta property="og:title" content="Namuxo Lanrepunido" />
 	<meta
 		property="og:description"
-		content="Interactive dictionary for the IAL Kokanu."
+		content="Interactive dictionary for LRI."
 	/>
 </svelte:head>
 
@@ -105,7 +105,7 @@
 
 	<div class="flex gap-2">
 		<a
-			href="https://github.com/cubedhuang/kokanu-dictionary"
+			href="https://github.com/almostahexagon2/lri-dictionary"
 			class="interactive p-2"
 			target="_blank"
 			rel="noopener noreferrer"
