@@ -35,7 +35,7 @@
 	{#if word.preposition !== '-'}
 		<p>
 			<b>Prep.</b> &middot;
-			{word.[preposition}
+			{word.preposition}
 		</p>
 	{/if}
 
