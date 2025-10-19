@@ -53,10 +53,10 @@
 		</a>
 
 		<a
-			href="https://kokanu.com"
+			href="https://almostahexagon2.github.io/lri"
 			class="ml-auto mt-auto mb-4 text-sm flex text-white hocus:text-blue-200 transition"
 		>
-			kokanu.com
+			main site
 		</a>
 	</div>
 </div>
