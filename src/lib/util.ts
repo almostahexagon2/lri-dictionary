@@ -1,6 +1,6 @@
 import type { Word } from './types';
 
-const order = 'ptkcwljmnshaieou'.split('');
+const order = 'aiueopbtdkgmnfvszxhwlrjcqy'.split('');
 
 export function sortAlphabetically(a: string | Word, b: string | Word) {
 	if (typeof a === 'object') {
