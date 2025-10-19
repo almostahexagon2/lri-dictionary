@@ -228,7 +228,7 @@
 	<input
 		type="text"
 		class="mt-1 block input px-4 py-2"
-		placeholder="o jatan..."
+		placeholder="xo turovu..."
 		bind:value={search}
 	/>
 </p>
