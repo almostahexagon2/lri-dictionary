@@ -50,9 +50,6 @@
 		<p class="space">
 			<span class="faded"> from </span>
 			{word.origin}
-			<! {#if word.language}
-				{word.language}
-			{/if} >
 		</p>
 		<p>
 			{word.language} 
