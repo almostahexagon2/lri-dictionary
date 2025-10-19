@@ -1,62 +1,50 @@
 export type WordType =
-	| 'Connector'
-	| 'Demonstrative'
-	| 'Grammar'
-	| 'Modifier'
-	| 'Noun'
-	| 'Preposition'
+	| 'Prefix'
+	| 'Suffix'
+	| 'Content'
 	| 'Pronoun'
-	| 'Quantity'
-	| 'Verb';
+	| 'Number'
+	| 'Grammer';
 
 export type Word = {
 	word: string;
-	likanu: string;
+	cyrillic: string;
 	type: WordType;
 
 	meaning: string;
+	adjective: string;
 	noun: string;
 	verb: string;
-	modifier: string;
-	antonym: string;
-
+	adverb: string;
+	preposition: string;
 	origin: string;
-	ipa: string;
-	family: string;
+	language: string;
+	antonym: string;
 };
 
 export const wordTypeBackgroundColors: Record<WordType, string> = {
-	Connector: 'bg-rose-500 dark:bg-rose-600',
-	Demonstrative: 'bg-red-700 dark:bg-red-800',
-	Grammar: 'bg-orange-400 dark:bg-orange-600',
-	Modifier: 'bg-yellow-400 dark:bg-yellow-600',
-	Noun: 'bg-emerald-400 dark:bg-emerald-600',
-	Preposition: 'bg-cyan-400 dark:bg-cyan-600',
-	Pronoun: 'bg-blue-400 dark:bg-blue-600',
-	Quantity: 'bg-violet-400 dark:bg-violet-600',
-	Verb: 'bg-fuchsia-400 dark:bg-fuchsia-600'
+	Prefix: 'bg-rose-500 dark:bg-rose-600',
+	Suffix: 'bg-red-700 dark:bg-red-800',
+	Content: 'bg-orange-400 dark:bg-orange-600',
+	Pronoun: 'bg-yellow-400 dark:bg-yellow-600',
+	Number: 'bg-emerald-400 dark:bg-emerald-600',
+	Grammer: 'bg-cyan-400 dark:bg-cyan-600',
 };
 
 export const wordTypeTextColors: Record<WordType, string> = {
-	Connector: 'text-rose-600 dark:text-rose-400',
-	Demonstrative: 'text-red-800 dark:text-red-600',
-	Grammar: 'text-orange-600 dark:text-orange-400',
-	Modifier: 'text-yellow-600 dark:text-yellow-400',
-	Noun: 'text-emerald-600 dark:text-emerald-400',
-	Preposition: 'text-cyan-600 dark:text-cyan-400',
-	Pronoun: 'text-blue-600 dark:text-blue-400',
-	Quantity: 'text-violet-600 dark:text-violet-300',
-	Verb: 'text-fuchsia-600 dark:text-fuchsia-400'
+	Prefix: 'text-rose-600 dark:text-rose-400',
+	Suffix: 'text-red-800 dark:text-red-600',
+	Content: 'text-orange-600 dark:text-orange-400',
+	Pronoun: 'text-yellow-600 dark:text-yellow-400',
+	Number: 'text-emerald-600 dark:text-emerald-400',
+	Grammer: 'text-cyan-600 dark:text-cyan-400',
 };
 
 export const wordTypeBorderColors: Record<WordType, string> = {
-	Connector: 'border-rose-500 dark:border-rose-600',
-	Demonstrative: 'border-red-700 dark:border-red-800',
-	Grammar: 'border-orange-400 dark:border-orange-600',
-	Modifier: 'border-yellow-400 dark:border-yellow-600',
-	Noun: 'border-emerald-400 dark:border-emerald-600',
-	Preposition: 'border-cyan-400 dark:border-cyan-600',
-	Pronoun: 'border-blue-400 dark:border-blue-600',
-	Quantity: 'border-violet-400 dark:border-violet-600',
-	Verb: 'border-fuchsia-400 dark:border-fuchsia-600'
+	Prefix: 'border-rose-500 dark:border-rose-600',
+	Suffix: 'border-red-700 dark:border-red-800',
+	Content: 'border-orange-400 dark:border-orange-600',
+	Pronoun: 'border-yellow-400 dark:border-yellow-600',
+	Number: 'border-emerald-400 dark:border-emerald-600',
+	Grammer: 'border-cyan-400 dark:border-cyan-600',
 };
