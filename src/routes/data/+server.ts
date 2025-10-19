@@ -1,8 +1,9 @@
 import { json } from '@sveltejs/kit';
-import { GOOGLE_KEY } from '$env/static/private';
+// import { GOOGLE_KEY } from '$env/static/private';
 import type { Word } from '$lib/types';
 import { sortAlphabetically } from '$lib/util.js';
 
+const GOOGLE_KEY = 'AIzaSyCjQVz242YwBGpsR8S64BKi0p4grBz_tGI';
 const SHEETS_API_BASE = 'https://sheets.googleapis.com/v4/spreadsheets';
 const SHEET_NAME = 'Dictionary';
 const SHEET_ID = '1SiXXmQUrQ2KI7SRV3Hp_FP53HDteuuMF1ZJ_d_AwBr4';
