@@ -6,20 +6,21 @@ import { sortAlphabetically } from '$lib/util.js';
 const GOOGLE_KEY = 'AIzaSyCjQVz242YwBGpsR8S64BKi0p4grBz_tGI';
 const SHEETS_API_BASE = 'https://sheets.googleapis.com/v4/spreadsheets';
 const SHEET_NAME = 'Dictionary';
-const SHEET_ID = '1SiXXmQUrQ2KI7SRV3Hp_FP53HDteuuMF1ZJ_d_AwBr4';
+const SHEET_ID = '1IcDbxBUb7Ll2vu4zezW9iw0mPvZ_dUqYzc5dhc1VDaQ';
 
 const keys: Record<string, keyof Word> = {
 	Word: 'word',
-	'xʃxƨſ ': 'likanu',
+	Cyrillic: 'cyrillic',
 	Type: 'type',
 	Meaning: 'meaning',
+	Adjective: 'adjective',
 	Noun: 'noun',
 	Verb: 'verb',
-	Modifier: 'modifier',
-	Antonym: 'antonym',
+	Adverb: 'adverb',
+	Preposition: 'preposition',
 	Origin: 'origin',
-	IPA: 'ipa',
-	Family: 'family'
+	Language: 'language',
+	Antonym: 'antonym'
 };
 
 export async function GET({ fetch, setHeaders }) {
