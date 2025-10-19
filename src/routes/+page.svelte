@@ -55,7 +55,7 @@
 			scoreMatch(word.preposition) * 20 +
 			scoreMatch(word.type) * 20 +
 			scoreMatch(word.origin) * 20 +
-			scoreMatch(word.language) * 20
+			scoreMatch(word.language) * 20 +
 			scoreMatch(word.antonym) * 20
 		
 		);
