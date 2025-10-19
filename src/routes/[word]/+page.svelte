@@ -29,18 +29,18 @@
 </script>
 
 <svelte:head>
-	<title>{word.word} &middot; {word.likanu} | Kokanu</title>
+	<title>{word.word} &middot; | LRI</title>
 
 	<meta name="description" content={description} />
 	<meta name="keywords" content={word.word} />
 
-	<meta property="og:title" content="{word.word} · {word.likanu}" />
+	<meta property="og:title" content="{word.word} · {word.cyrillic}" />
 	<meta property="og:description" content={description} />
 </svelte:head>
 
 <div class="flex justify-between items-end">
 	<h1 class="text-3xl font-bold">
-		{word.word} &middot; {word.likanu}
+		{word.word} &middot; {word.cyrillic}
 	</h1>
 
 	<div class="flex gap-2">
