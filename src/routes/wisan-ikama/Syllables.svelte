@@ -8,7 +8,7 @@
 
 	let useStartingSyllables = false;
 
-	const syllable = /[chjklmnpstw]?(?=[aeiou])[aeiou]n?(?![aeiou])/g;
+	const syllable = /(?:cz|qz|sz|rz|[pbtdkgmnfvszxhwlrjcqaeiouy])/g;
 
 	$: syllableGroups = words.reduce((acc, word) => {
 		let syllables = word.word.match(syllable);
