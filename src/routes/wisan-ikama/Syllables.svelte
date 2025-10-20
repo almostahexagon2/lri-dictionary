@@ -37,17 +37,25 @@
 
 	const consonants = [
 		'',
-		'c',
-		'h',
-		'j',
+		'p',
+		'b',
+		't',
+		'd',
 		'k',
-		'l',
+		'g',
 		'm',
 		'n',
-		'p',
+		'f',
+		'v',
 		's',
-		't',
-		'w'
+		'z',
+		'x',
+		'h',
+		'w',
+		'l',
+		'j',
+		'c',
+		'q'
 	].sort(sortAlphabetically);
 	const otherConsonants = consonants.slice(1);
 	const vowels = ['a', 'e', 'i', 'o', 'u'].sort(sortAlphabetically);
