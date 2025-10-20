@@ -32,27 +32,27 @@
 </script>
 
 <svelte:head>
-	<title>wisan ikama | Kokanu</title>
+	<title>Wukaszjeviczi | LRI</title>
 
 	<meta
 		name="description"
-		content="Interactive dictionary for the IAL Kokanu."
+		content="Interactive dictionary for LRI."
 	/>
-	<meta name="keywords" content="kokanu, dictionary, interactive" />
+	<meta name="keywords" content="LRI, lanrepunido, dictionary, interactive" />
 
-	<meta property="og:title" content="wisan ikama | Kokanu" />
+	<meta property="og:title" content="Wukaszjeviczi | LRI" />
 	<meta
 		property="og:description"
-		content="Interactive dictionary for the IAL Kokanu."
+		content="Interactive dictionary for LRI"
 	/>
 </svelte:head>
 
 <div class="flex justify-between items-end">
-	<h1 class="text-3xl font-bold">wisan ikama</h1>
+	<h1 class="text-3xl font-bold">Wukaszjeviczi</h1>
 
 	<div class="flex gap-2">
 		<a
-			href="https://github.com/cubedhuang/kokanu-dictionary"
+			href="https://github.com/almostahexagon2/lri-dictionary"
 			class="interactive p-2"
 			target="_blank"
 			rel="noopener noreferrer"
@@ -143,7 +143,7 @@
 			href="/{word.word}"
 		>
 			<span class="font-bold">{word.word}</span>
-			<span class="ml-1 faded">{word.likanu}</span>
+			<span class="ml-1 faded">{word.cyrillic}</span>
 		</a>
 
 		<button
