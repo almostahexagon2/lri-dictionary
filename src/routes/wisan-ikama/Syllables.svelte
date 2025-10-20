@@ -152,6 +152,6 @@
 
 <style lang="postcss">
 	.grid {
-		grid-template-columns: repeat(13, minmax(0, 1fr));
+		grid-template-columns: repeat(22, minmax(0, 1fr));
 	}
 </style>
