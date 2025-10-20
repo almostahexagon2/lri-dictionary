@@ -7,7 +7,7 @@
 	export let words: Word[];
 
 	$: languageGroups = words.reduce((acc, word) => {
-		const name = word.family;
+		const name = word.language;
 
 		if (acc.has(name)) {
 			acc.get(name)!.push(word.word);
@@ -19,5 +19,5 @@
 	}, new Map<string, string[]>());
 </script>
 
-<Separator>Families</Separator>
+<Separator>Languages</Separator>
 <Table items={languageGroups} />
