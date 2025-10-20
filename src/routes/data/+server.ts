@@ -20,7 +20,8 @@ const keys: Record<string, keyof Word> = {
 	Preposition: 'preposition',
 	Origin: 'origin',
 	Language: 'language',
-	Antonym: 'antonym'
+	Antonym: 'antonym',
+	Extra: 'extra'
 };
 
 export async function GET({ fetch, setHeaders }) {
