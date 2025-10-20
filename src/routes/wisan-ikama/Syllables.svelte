@@ -55,10 +55,14 @@
 		'l',
 		'j',
 		'c',
-		'q'
+		'q',
+		'sz',
+		'rz',
+		'cz',
+		'qz'
 	].sort(sortAlphabetically);
 	const otherConsonants = consonants.slice(1);
-	const vowels = ['a', 'e', 'i', 'o', 'u'].sort(sortAlphabetically);
+	const vowels = [].sort(sortAlphabetically);
 
 	function consonantCount(consonant: string) {
 		if (consonant === '') {
@@ -152,6 +156,6 @@
 
 <style lang="postcss">
 	.grid {
-		grid-template-columns: repeat(21, minmax(0, 1fr));
+		grid-template-columns: repeat(29, minmax(0, 1fr));
 	}
 </style>
