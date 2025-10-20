@@ -7,7 +7,7 @@
 	export let words: Word[];
 
 	$: languageGroups = words.reduce((acc, word) => {
-		const name = word.language;
+		const name = word.family;
 
 		if (acc.has(name)) {
 			acc.get(name)!.push(word.word);
