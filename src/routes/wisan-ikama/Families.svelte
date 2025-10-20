@@ -19,5 +19,5 @@
 	}, new Map<string, string[]>());
 </script>
 
-<Separator>Languages</Separator>
+<Separator>Families</Separator>
 <Table items={languageGroups} />
