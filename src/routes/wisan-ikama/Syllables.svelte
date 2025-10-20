@@ -36,7 +36,11 @@
 	);
 
 	const consonants = [
-		'',
+		'a',
+		'o',
+		'i',
+		'u',
+		'e',
 		'p',
 		'b',
 		't',
