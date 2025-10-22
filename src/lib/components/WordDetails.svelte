@@ -46,10 +46,10 @@
 		</p>
 	{/if}
 
-	{#if word.antonym}
+	{#if word.malroot}
 		<p class="space">
-			<b>Antonym</b> &middot;
-			{word.antonym}
+			<b>Malroot</b> &middot;
+			{word.malroot}
 		</p>
 	{/if}
 
