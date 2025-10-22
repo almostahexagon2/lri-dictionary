@@ -40,7 +40,7 @@ export const wordTypeTextColors: Record<WordType, string> = {
 	Pronoun: 'text-yellow-600 dark:text-yellow-400',
 	Number: 'text-emerald-600 dark:text-emerald-400',
 	Grammer: 'text-cyan-600 dark:text-cyan-400',
-	Compound: 'bg-fuchsia-400 dark:bg-fuchsia-600'
+	Compound: 'text-fuchsia-600 dark:text-fuchsia-400'
 };
 
 export const wordTypeBorderColors: Record<WordType, string> = {
@@ -50,5 +50,5 @@ export const wordTypeBorderColors: Record<WordType, string> = {
 	Pronoun: 'border-yellow-400 dark:border-yellow-600',
 	Number: 'border-emerald-400 dark:border-emerald-600',
 	Grammer: 'border-cyan-400 dark:border-cyan-600',
-	Compound: 'bg-fuchsia-400 dark:bg-fuchsia-600'
+	Compound: 'border-fuchsia-400 dark:border-fuchsia-600'
 };
