@@ -62,6 +62,12 @@
 			{word.language} 
 		</p>
 	{/if}
+	{#if word.extra}
+		<p class="space">
+			<b>Extra:</b> &middot;
+			{word.extra}
+		</p>
+	{/if}
 </div>
 
 <style lang="postcss">
