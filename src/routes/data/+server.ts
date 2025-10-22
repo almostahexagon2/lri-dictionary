@@ -20,7 +20,7 @@ const keys: Record<string, keyof Word> = {
 	Preposition: 'preposition',
 	Origin: 'origin',
 	Language: 'language',
-	Antonym: 'antonym',
+	Malroot: 'malroot',
 	Extra: 'extra'
 };
 
