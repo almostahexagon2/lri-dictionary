@@ -21,6 +21,7 @@ const keys: Record<string, keyof Word> = {
 	Origin: 'origin',
 	Language: 'language',
 	Antonym: 'antonym',
+	Compound: 'compound',
 	Extra: 'extra'
 };
 
