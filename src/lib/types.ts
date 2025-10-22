@@ -5,7 +5,7 @@ export type WordType =
 	| 'Pronoun'
 	| 'Number'
 	| 'Grammer'
-	| 'Compount';
+	| 'Compound';
 
 export type Word = {
 	word: string;
