@@ -20,7 +20,7 @@ export type Word = {
 	preposition: string;
 	origin: string;
 	language: string;
-	antonym: string;
+	malroot: string;
 };
 
 export const wordTypeBackgroundColors: Record<WordType, string> = {
