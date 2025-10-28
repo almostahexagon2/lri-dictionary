@@ -10,9 +10,9 @@
 		const letter = word.cyrillic[0];
 
 		if (acc.has(letter)) {
-			acc.get(letter)!.push(word.cyrillic);
+			acc.get(letter)!.push(word.word);
 		} else {
-			acc.set(letter, [word.cyrillic]);
+			acc.set(letter, [word.word]);
 		}
 
 		return acc;
