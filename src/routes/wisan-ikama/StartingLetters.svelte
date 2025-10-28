@@ -7,12 +7,12 @@
 	export let words: Word[];
 
 	$: startingLetterGroups = words.reduce((acc, word) => {
-		const letter = word.word[0];
+		const letter = word.cyrillic[0];
 
 		if (acc.has(letter)) {
-			acc.get(letter)!.push(word.word);
+			acc.get(letter)!.push(word.cyrillic);
 		} else {
-			acc.set(letter, [word.word]);
+			acc.set(letter, [word.cyrillic]);
 		}
 
 		return acc;
