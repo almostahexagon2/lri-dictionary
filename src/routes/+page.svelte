@@ -96,7 +96,7 @@
 		name="description"
 		content="Interactive dictionary for LRI."
 	/>
-	<meta name="keywords" content="LRI, lanrepunido, dictionary, interactive" />
+	<meta name="keywords" content="LRI, lanrepunido, dictionary, interactive, conlang" />
 
 	<meta property="og:title" content="Namuxo Lanrepunido" />
 	<meta
@@ -106,7 +106,7 @@
 </svelte:head>
 
 <div class="flex justify-between items-end">
-	<h1 class="text-2xl sm:text-3xl font-bold">Namuxo Lanrepunida</h1>
+	<h1 class="text-2xl sm:text-3xl font-bold">Namuxo Lanrepunido</h1>
 
 	<div class="flex gap-2">
 		<a
