@@ -90,7 +90,7 @@
 </script>
 
 <svelte:head>
-	<title>Namuxo Lanrepunida</title>
+	<title>Namuxo Lanrepunido</title>
 
 	<meta
 		name="description"
