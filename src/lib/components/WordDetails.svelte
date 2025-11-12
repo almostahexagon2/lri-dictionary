@@ -48,7 +48,7 @@
 
 	{#if word.malroot}
 		<p class="space">
-			<b>Malroot</b> &middot;
+			<b>mal{word.word}</b> &middot;
 			{word.malroot}
 		</p>
 	{/if}
