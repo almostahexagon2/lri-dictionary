@@ -131,10 +131,10 @@
 </div>
 
 <!-- <Syllables words={data.words} />
-<StartingLetters words={data.words} />
+<StartingLetters words={data.words} /> -->
 <WordTypes words={data.words} /> 
 <Families words={data.words} /> 
-<SimilarWords words={data.words} /> --> 
+<SimilarWords words={data.words} /> 
 
 <Popup bind:value={selectedWordData} let:value={word}>
 	<div class="flex justify-between">
