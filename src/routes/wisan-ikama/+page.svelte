@@ -131,7 +131,7 @@
 </div>
 
 <Syllables words={data.words} /> 
-<!-- <StartingLetters words={data.words} /> --> 
+<StartingLetters words={data.words} /> 
 <WordTypes words={data.words} /> 
 <Families words={data.words} /> 
 <SimilarWords words={data.words} /> 
