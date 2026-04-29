@@ -5,7 +5,7 @@ import { sortAlphabetically } from '$lib/util.js';
 
 const GOOGLE_KEY = 'AIzaSyCjQVz242YwBGpsR8S64BKi0p4grBz_tGI';
 const SHEETS_API_BASE = 'https://sheets.googleapis.com/v4/spreadsheets';
-const SHEET_NAME = 'ARCHIVE';
+const SHEET_NAME = 'Dictionary';
 const SHEET_ID = '1IcDbxBUb7Ll2vu4zezW9iw0mPvZ_dUqYzc5dhc1VDaQ';
 
 const keys: Record<string, keyof Word> = {
