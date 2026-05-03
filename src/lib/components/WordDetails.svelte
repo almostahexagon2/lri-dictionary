@@ -13,7 +13,7 @@
 
 	{#if word.noun !== '-'}
 		<p class="space">
-			<b>Noun.</b> &middot;
+			<b>{word.word}o</b> &middot;
 			{word.noun}
 		</p>
 	{/if}
