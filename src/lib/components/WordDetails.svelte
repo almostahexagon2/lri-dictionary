@@ -20,35 +20,51 @@
 
 	{#if word.adjective !== '-'}
 		<p class="space">
-			<b>Adj.</b> &middot;
+			<b>{word.word}a</b> &middot;
 			{word.adjective}
 		</p>
 	{/if}
 
-	{#if word.verb !== '-'}
+	{#if word.uverb !== '-'}
 		<p class="space">
-			<b>Verb</b> &middot;
+			<b>{word.word}u</b> &middot;
 			{word.verb}
 		</p>
 	{/if}
 
-	{#if word.adverb !== '-'}
+	{#if word.everb !== '-'}
+		<p class="space">
+			<b>{word.word}e</b> &middot;
+			{word.verb}
+		</p>
+	{/if}
+
+	{#if word.usuverb !== '-'}
+		<p class="space">
+			<b>{word.word}usu</b> &middot;
+			{word.verb}
+		</p>
+	{/if}
+
+<!--
+{#if word.adverb !== '-'}
 		<p>
 			<b>Adv.</b> &middot;
 			{word.adverb}
 		</p>
 	{/if}
+-->
 
 	{#if word.preposition !== '-'}
 		<p>
-			<b>Prep.</b> &middot;
+			<b>{word.word}</b> &middot;
 			{word.preposition}
 		</p>
 	{/if}
 
 	{#if word.malroot}
 		<p class="space">
-			<b>mal{word.word}</b> &middot;
+			<b>naj{word.word}</b> &middot;
 			{word.malroot}
 		</p>
 	{/if}
@@ -64,7 +80,7 @@
 	{/if}
 	{#if word.extra}
 		<p class="space">
-			<b>Extra:</b> &middot;
+			<b>Extra:</b>;
 			{word.extra}
 		</p>
 	{/if}
