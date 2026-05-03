@@ -12,16 +12,22 @@ const keys: Record<string, keyof Word> = {
 	Word: 'word',
 	Cyrillic: 'cyrillic',
 	Type: 'type',
+	DefaultType: 'defaulttype',
 	Meaning: 'meaning',
 	Adjective: 'adjective',
 	Noun: 'noun',
 	Verb: 'verb',
+	uVerb: 'uverb',
+	eVerb: 'everb',
+	usuVerb: 'usuverb',
 	Adverb: 'adverb',
 	Preposition: 'preposition',
 	Origin: 'origin',
 	Language: 'language',
 	Malroot: 'malroot',
-	Extra: 'extra'
+	Extra: 'extra',
+	Example: 'example',
+	ExampleTranslation: 'exampletranslation'
 };
 
 export async function GET({ fetch, setHeaders }) {
