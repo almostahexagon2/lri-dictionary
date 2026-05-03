@@ -80,7 +80,7 @@
 	{/if}
 	{#if word.extra}
 		<p class="space">
-			<b>Extra:</b>;
+			<b>Extra: </b>
 			{word.extra}
 		</p>
 	{/if}
