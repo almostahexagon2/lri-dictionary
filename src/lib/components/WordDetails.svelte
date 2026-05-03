@@ -28,21 +28,21 @@
 	{#if word.uverb !== '-'}
 		<p class="space">
 			<b>{word.word}u</b> &middot;
-			{word.verb}
+			{word.uverb}
 		</p>
 	{/if}
 
 	{#if word.everb !== '-'}
 		<p class="space">
 			<b>{word.word}e</b> &middot;
-			{word.verb}
+			{word.everb}
 		</p>
 	{/if}
 
 	{#if word.usuverb !== '-'}
 		<p class="space">
 			<b>{word.word}usu</b> &middot;
-			{word.verb}
+			{word.usuverb}
 		</p>
 	{/if}
 
