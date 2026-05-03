@@ -21,6 +21,10 @@ export type Word = {
 	origin: string;
 	language: string;
 	malroot: string;
+
+	extra: string;
+	example: string;
+	exampletranslation: string;
 };
 
 export const wordTypeBackgroundColors: Record<WordType, string> = {
